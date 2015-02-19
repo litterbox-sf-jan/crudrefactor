@@ -1,0 +1,19 @@
+<h1><%= @author[:name] %></h1>
+
+<h2>Here are <%= @author[:name] %>'s books</h2>
+
+<% @author.books.each do |book| %>
+  <p>
+    <%= link_to book[:title], author_book_path(@author.id, book.id) %>
+  </p>
+<% end %>
+
+<%= link_to 'Add a new book', new_author_book_path(@author)%>
+
+<p>
+  <%= link_to 'Edit this author', edit_author_path(@author.id)%>
+</p>
+
+<p>
+  <%= link_to 'Go back', authors_path%>
+</p>

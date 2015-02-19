@@ -1,0 +1,12 @@
+<h1>Here are <%= @author.name%>'s books:</h1>
+<% @books.each do |book|%>
+  <p>
+    <%= link_to book[:title], book_path(book) %>
+  </p>
+<% end %>
+
+<%= link_to 'Add a new book', new_author_book_path(@author)%>
+
+<p>
+  <%= link_to 'See all authors', authors_path%>
+</p>

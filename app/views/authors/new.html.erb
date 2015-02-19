@@ -1,0 +1,18 @@
+<h1>Add a new author</h1>
+<% if @author.errors.any? %>
+  <% @author.errors.full_messages.each do |error| %>
+    <p class="text-danger">
+      <%= error%>
+    </p>
+  <% end %>
+<% end %>
+
+<%= form_for @author do |f|%>
+  <p>
+    <%= f.label :name%>
+    <%= f.text_field :name, autofocus: true%>
+  </p>
+  <p>
+    <%= f.submit "Add", class: "btn btn-success" %>
+  </p>
+<% end %>

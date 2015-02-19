@@ -1,0 +1,10 @@
+<h2><%= @book[:title] %></h2>
+
+<!-- <a href="/authors/<%#= @book.author.id%>/books">See <%#= @book.author.name  %>'s books</a> -->
+
+<%= link_to "See #{@book.author.name}'s books", author_books_path(@author) %>
+<p>
+  <!-- <a href="/authors/<%=@book[:author_id]%>/books/<%=@book[:id]%>/edit">Edit this book</a> -->
+  <%= link_to "Edit this book", edit_book_path(@book) %>
+
+</p>
