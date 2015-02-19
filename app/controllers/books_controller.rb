@@ -40,14 +40,13 @@ class BooksController < ApplicationController
     else
       render :edit
     end
-
   end
 
   def destroy
     book = Book.find params[:id]
     book.destroy
     flash[:notice] = "Book deleted"
-    redirect_to author_books_path (book.author)
+    redirect_to author_books_path(book.author)
   end
 
   private
